@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from tavily import AsyncTavilyClient
 load_dotenv()
 
-Tavily_API_KEY = os.getenv("Tavily_API_KEY")
+Tavily_API_KEY = os.getenv("TAVILY_API_KEY")
 if not Tavily_API_KEY:
     raise ValueError("TAVILY_API_KEY is missing from .env")
 client = AsyncTavilyClient(api_key=Tavily_API_KEY)

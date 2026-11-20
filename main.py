@@ -80,7 +80,9 @@ async def research_combined(data: ResearchRequest):
 
 
 
-
+@app.get("/")
+async def home():
+    return {"message": "AI Research Assistant is running!"}
 
 
 

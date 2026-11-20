@@ -25,7 +25,7 @@ async def search_google(topic: str,limit: int = 10):
         "nfpr": 1
     }
 
-    async with httpx.AsyncClient() as client: #Creates an asynchronous HTTP client
+    async with httpx.AsyncClient(timeout=60.0) as client: #Creates an asynchronous HTTP client
         response = await client.get(  # await Waits for an asynchronous operation without blocking the event loop
             "https://serpapi.com/search.json",
             params=params

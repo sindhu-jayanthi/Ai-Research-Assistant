@@ -15,7 +15,8 @@ async def summarize_results(topic: str, search_results: list):
 
     Research Topic: {topic}
 
-    Analyse the following Google search results:
+    Analyse the following web search results collected
+    from SerpAPI and Tavily:
 
     {search_results}
 

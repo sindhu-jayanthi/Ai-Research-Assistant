@@ -3,4 +3,4 @@ uvicorn
 httpx
 python-dotenv
 google-genai
-tagvily-python
+Tavily-python

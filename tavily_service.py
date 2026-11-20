@@ -7,13 +7,7 @@ Tavily_API_KEY = os.getenv("TAVILY_API_KEY")
 if not Tavily_API_KEY:
     raise ValueError("TAVILY_API_KEY is missing from .env")
 client = AsyncTavilyClient(api_key=Tavily_API_KEY)
-async def search_tavily(topic: str, limit: int = 10):
 
-    response = await client.search(
-        query=topic,
-        search_depth="basic",
-        max_results=limit
-    )
 async def search_tavily(topic: str, limit: int = 10):
 
     response = await client.search(

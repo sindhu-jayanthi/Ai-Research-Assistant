@@ -10,7 +10,7 @@ app = FastAPI()
 class ResearchRequest(BaseModel):
     topic:str
 
-@app.post("/research")  #serp+gemini integration
+@app.post("/researchserpapi")  #serp+gemini integration
 async def research_topic(data: ResearchRequest):
     results = await search_google(data.topic)
     summary = await summarize_results(data.topic, results)
@@ -23,7 +23,7 @@ async def research_topic(data: ResearchRequest):
     }
 
 
-@app.post("/compare-search") #to get both search results
+@app.post("/compare-search-tavily-serp") #to get both search results
 async def compare_search(data: ResearchRequest):
 
     google_results, tavily_results = await asyncio.gather( #both search can run simultaniously and reduce time
@@ -80,9 +80,7 @@ async def research_combined(data: ResearchRequest):
 
 
 
-@app.get("/")
-async def home():
-    return {"message": "AI Research Assistant is running!"}
+
 
 
 
